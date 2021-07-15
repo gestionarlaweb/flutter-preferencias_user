@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:preferencias_usuario/screens/settings_page.dart';
+import 'package:preferencias_usuario/src/screens/home_page.dart';
+import 'package:preferencias_usuario/src/screens/settings_page.dart';
 
 class MenuWidget extends StatelessWidget {
   const MenuWidget({Key? key}) : super(key: key);
@@ -20,8 +21,13 @@ class MenuWidget extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.pages, color: Colors.blue),
-            title: Text('Pages'),
-            onTap: () {},
+            title: Text('Home'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => HomePage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.party_mode, color: Colors.blue),
